@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音频标签</title>
+</head>
+<body>
+    <audio id="audio" src="./LOOP.mp3" controls muted loop></audio>
+    <button id="button">点我增加音量</button>
+    <br>
+    音量提示:<input type="range" min="0" max="100" id="range">
+</body>
+
+<script>
+    let audio = document.getElementById('audio')
+    audio.volume = 0;
+    let button = document.getElementById('button')
+    let range = document.getElementById('range')
+    range.value = audio.volume*100
+    //全局属性用于控制定时器
+    let tid;
+    //点击时触发事件
+    button.onclick = ()=>{
+        if(audio.volume+0.02>1){
+            console.log('音量已经最大');
+        }else{
+            console.log(`已经增大音量为${((audio.volume+0.02)*100).toFixed(0)}%`);
+            audio.volume += 0.02;
+            range.value = audio.volume*100
+            //关闭静音
+            audio.muted = false
+        }
+    }
+    // 鼠标按下时触发事件
+    button.onmousedown = ()=>{
+        // 这里获取定时器的唯一id
+        tid = setInterval(() => {
+            if(audio.volume+0.02>1){
+            console.log('音量已经最大');
+            }else{
+            console.log(`已经增大音量为${((audio.volume+0.02)*100).toFixed(0)}%`);
+            audio.volume += 0.02;
+            range.value = audio.volume*100
+            audio.muted = false
+            }
+        }, 300);
+    }
+    //鼠标抬起时关闭
+    button.onmouseup = ()=>{
+        clearInterval(tid);
+    }
+    //鼠标移开也关闭事件
+    button.onmouseout = ()=>{
+        clearInterval(tid);
+    }
+    //测试audio事件
+    audio.onclick = ()=>{
+        console.log(1111);
+    }
+    //通过拖动条设置音量
+    range.onclick = ()=>{
+        console.log(range.value);
+        audio.volume = range.value/100;
+        if(range.value==0){
+            audio.muted = true
+        }else{
+            audio.muted = false
+        }
+    }
+</script>
+</html>
