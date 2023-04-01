@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1">大家好</div>
+</body>
+<style>
+    #box1{
+        width: 400px;
+        height: 400px;
+        background-color: aqua;
+
+        margin:0 auto;
+        padding: 50px;
+        border: 50px dashed black;
+        font-size: 120px;
+        font-weight: bold;
+        background-image: url('../img/02.沿海公路.jpg');
+        background-repeat:no-repeat;
+
+        /* 需要字体为透明才行 */
+        color: transparent;
+        /* 火狐需要添加 -moz- 前缀 */
+        -webkit-background-clip: text;
+    }
+</style>
+</html>
