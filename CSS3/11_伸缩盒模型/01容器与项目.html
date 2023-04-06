@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>容器与项目</title>
+</head>
+<body>
+    <div id="box1">
+        <div class="inner">1</div>
+        <div class="inner">2</div>
+        <div class="inner">3</div>
+    </div>
+</body>
+<style>
+    #box1{
+        width: 1000px;
+        height: 600px;
+        background-color: gray;
+        /* 将开元素 变成了伸缩容器 */
+        display: flex;
+        /* 第二种开启伸缩容器的方法 */
+        display: inline-flex;
+    }
+    .inner{
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+</style>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">我是box2</div>
+    </div>
+</body>
+<style>
+    #box1{
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+    #box2{
+        width: 200px;
+        height: 200px;
+        background-color: aqua; 
+        /* 先位移 后缩放 */
+        /* transform: translate(100px,100px) scale(0.5); */
+        /* 先缩放 后位移 */
+        /* transform:  scale(0.5) translate(100px,100px) ; */
+        /* 先位移 后旋转 */
+        /* transform: translate(100px,100px) rotate(30deg); */
+        /* 先旋转 后位移 */
+        transform: rotate(30deg) translate(100px,100px);
+    }
+</style>
+</html>

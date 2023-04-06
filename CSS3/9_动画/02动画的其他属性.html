@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画的其他属性使用</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+<style>
+    .outer{
+        width: 1000px;
+        height: 100px;
+        border: 1px solid black; 
+    }
+    .inner {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        /* 应用动画到元素 */
+        animation-name: gotoRight;
+        /* 动画的持续时间 */
+        animation-duration: 0.5s;
+        /* 动画的延迟 */
+        animation-delay: 0.1s;
+        /* *****其他属性***** */
+        /* 调整动画方式 */
+        animation-timing-function:linear;
+        /* 动画播放的次数 */
+        animation-iteration-count: infinite;
+        /* 修改动画的方向 */
+        animation-direction:alternate;
+        /* 动画以外的状态(不发生动画的时候在什么位置) */
+        animation-fill-mode:backwards;
+        /* 动画的播放状态 */
+        animation-play-state: paused;
+    }   
+    /* 定义一个动画(定义一组关键帧) */
+    @keyframes gotoRight{
+        /* 第一帧 */
+        from{
+            
+        }
+        /* 最后一帧 */
+        to {
+            /* 向右移动900像素 */
+            transform:translate(900px);
+            background-color: red;
+        }
+    }
+</style>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级过度</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+        <div class="box box9"></div>
+    </div>
+</body>
+<style>
+    .outer{
+        width: 1300px;
+        height: 900px;
+        border: 1px solid black;
+    }
+    .outer:hover .box{
+        width: 1300px;
+    }
+    .box{
+        width: 200px;
+        height: 100px;
+        /* 设置哪个属性需要过度效果 */
+        transition-property: all ;
+        /* 设置过渡时间 */
+        transition-duration: 5s;
+        /* 过度延迟 */
+        /* transition-delay: 1s; */
+    }
+    .box1{
+        background-color: aquamarine;
+        /* 默认值 平滑过度 慢快慢 */
+        transition-timing-function:ease;
+    }
+    .box2{
+        background-color: orange;
+        /* linear 匀速过度 */
+        transition-timing-function: linear;
+    }
+    .box3{
+        background-color: gray;
+        /* ease-in 慢快 */
+        transition-timing-function:ease-in;
+    }
+    .box4{
+        background-color: tomato;
+        /* ease-out 快慢 */
+        transition-timing-function:ease-out;
+    }
+    .box5{
+        background-color:green;
+        /* ease-in-out 慢快慢 没有ease平滑 */
+        transition-timing-function: ease-in-out;
+    }
+    .box6{
+        background-color: purple;
+        /* step-start 不考虑过度的时间直接到 终点 (没什么用)*/
+        transition-timing-function: step-start;
+    }
+    .box7{
+        background-color: deepskyblue;
+        /* step-end 考虑过渡时间 无效果 过度时间到了 瞬间到达终点 */
+        transition-timing-function: step-end;
+    }
+    .box8{
+        background-color: chocolate;
+        /* steps(x,y)分布过度 将动画分成 x段进行过度  
+        y可以设置开始执行的时机
+        start 表示立刻执行过度(默认值)
+        end表示会等一会执行*/
+        transition-timing-function:steps(20);
+    }
+    .box9{
+        background-color: black;
+        transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+</style>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合属性使用</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner2"></div>
+    </div>
+</body>
+<style>
+    .outer{
+        width: 1000px;
+        height: 100px;
+        border: 1px solid black; 
+    }
+    .inner {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        animation:gotoRight 1s 0.2s linear infinite alternate-reverse forwards;
+    }   
+    .inner2 {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        animation:gotoRight 0.8s 0.2s linear infinite alternate-reverse forwards;
+    }   
+    /* 定义一个动画(定义一组关键帧) */
+    @keyframes gotoRight{
+        /* 第一帧 */
+        from{
+            
+        }
+        /* 最后一帧 */
+        to {
+            /* 向右移动900像素 */
+            transform:translate(900px);
+            background-color: red;
+        }
+    }
+
+</style>
+</html>

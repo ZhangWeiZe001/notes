@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主轴方向</title>
+</head>
+<body>
+    <div id="box1">
+        <div class="inner">1</div>
+        <div class="inner">2</div>
+        <div class="inner">3</div>
+    </div>
+</body>
+<style>
+    #box1{
+        width: 1000px;
+        height: 600px;
+        background-color: gray;
+        margin:0 auto;
+        /* 将开元素 变成了伸缩容器 */
+        display: flex;
+        /* 伸缩盒模型的属性: */
+        /* row 默认值 水平方向从左往右 */
+        flex-direction: row;
+        /* reverse  水平方向从右向左 侧轴不变*/
+        flex-direction: row-reverse;
+        /* column 调整主轴方向为 垂直从上到下 */
+        flex-direction: column;
+        /* column-reverse 调整主轴为从下到上 侧轴为从左向右 */
+        flex-direction: column-reverse;
+    }
+    .inner{
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+</style>
+</html>

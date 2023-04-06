@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本使用</title>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+<style>
+    #box1{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        /* 设置哪个属性需要过度效果 */
+        transition-property: all ;
+        /* 设置过渡时间 */
+        transition-duration: 2s,5s,5s;
+    }
+    #box1:hover{
+        height: 400px;
+        width: 400px;
+        background-color: blue;
+        transform:rotate(45deg)
+    }
+</style>
+</html>
